@@ -1,7 +1,7 @@
 //
 // http://www.floVv.org - floVv engine
 //
-// The MIT License
+// Released under the MIT License.
 //
 // Copyright (c) 2012-2013, Mirek Rusin <mirek [at] me [dot] com>
 //

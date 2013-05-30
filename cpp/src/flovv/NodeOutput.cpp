@@ -1,5 +1,5 @@
 //
-// The MIT License
+// Released under the MIT License.
 //
 // Copyright (c) 2012 - 2013, Mirek Rusin <mirek [at] me [dot] com>
 // http://flovv.org
@@ -26,26 +26,26 @@ namespace flovv
     }
     
     Node &
-    NodeOutput::node ()
+    NodeOutput::getNode () const
     {
         return first;
     }
     
     const std::string &
-    NodeOutput::outputName () const
+    NodeOutput::getOutputName () const
     {
         return second;
     }
     
     OutputParam &
-    NodeOutput::output () const
+    NodeOutput::getOutput () const
     {
         return first.getOutput(second);
     }
     
     const std::string &
-    NodeOutput::typeName() const
+    NodeOutput::getTypeName() const
     {
-        return output().typeName();
+        return getOutput().getTypeName();
     }
 }

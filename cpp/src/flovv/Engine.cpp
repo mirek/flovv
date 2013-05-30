@@ -1,5 +1,5 @@
 //
-// The MIT License
+// Released under the MIT License.
 //
 // Copyright (c) 2012 - 2013, Mirek Rusin <mirek [at] me [dot] com>
 // http://flovv.org
@@ -40,13 +40,14 @@ namespace flovv
     Engine::connect (const NodeOutput &source, const NodeInput &destination)
     {
         bool result = false;
-        
+        std::cerr << source << std::endl;
+
         // Get convertion function between connected points (or direct
         // assignment for the same types).
-        auto typeConvertionFunction = mTypeRegistry.typeConvertionFunction({source.typeName(), destination.typeName()});
+        auto typeConvertionFunction = mTypeRegistry.typeConvertionFunction({source.getTypeName(), destination.typeName()});
         if (typeConvertionFunction) {
             
-            result = source.output().registerDestination(destination.input(), typeConvertionFunction);
+            result = source.getOutput().registerDestination(destination.input(), typeConvertionFunction);
         } else {
             
             // TODO: Log/throw convertion function not available.

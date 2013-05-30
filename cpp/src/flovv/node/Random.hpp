@@ -1,5 +1,5 @@
 //
-// The MIT License
+// Released under the MIT License.
 //
 // Copyright (c) 2012 - 2013, Mirek Rusin <mirek [at] me [dot] com>
 // http://flovv.org
@@ -39,18 +39,20 @@ namespace flovv { namespace node {
 
     public:
 
-        Random() : Node(ExecutionMode::Producer, TimeMode::Linear) {
-            registerInput ("Enabled", "Boolean", type::Boolean(true));
-            registerInput ("Seed",    "Int32",   type::Int32(0));
-            registerInput ("Min",     "Int64",   type::Int64(0));
-            registerInput ("Max",     "Int64",   type::Int64(100));
-            registerOutput("Output",  "Int64",   type::Int64(0));
+        /**
+         */
+        Random () : Node(ExecutionMode::Producer, TimeMode::Linear) {
+            registerInput("Enabled", "Boolean", type::Boolean(true));
+            registerInput("Seed", "Int32", type::Int32(0));
+            registerInput("Min", "Int64", type::Int64(0));
+            registerInput("Max", "Int64", type::Int64(100));
+            registerOutput("Output", "Int64", type::Int64(0));
         }
 
-        virtual void operator()() {
+        virtual void operator() () {
             
             // Update distribution if something changed.
-            if (hasInputChanged({"Min", "Max"})) {
+            if (haveAnyInputChanged({"Min", "Max"})) {
                 mUniformDistribution = decltype(mUniformDistribution)(loadInput<type::Int64>("Min"), loadInput<type::Int64>("Max"));
             }
 

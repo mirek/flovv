@@ -1,5 +1,5 @@
 //
-// The MIT License
+// Released under the MIT License.
 //
 // Copyright (c) 2012 - 2013, Mirek Rusin <mirek [at] me [dot] com>
 // http://flovv.org
@@ -111,7 +111,7 @@ namespace flovv
          */
         NodePtr
         createNode (const std::string &name);
-        
+
         /**
          * Create connection between node output and another node's input.
          *

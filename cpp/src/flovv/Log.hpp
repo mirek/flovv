@@ -1,5 +1,5 @@
 //
-// The MIT License
+// Released under the MIT License.
 //
 // Copyright (c) 2012 - 2013, Mirek Rusin <mirek [at] me [dot] com>
 // http://flovv.org
@@ -17,8 +17,8 @@
 // OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 //
 
-#ifndef __FLOVV_LOG__
-#define __FLOVV_LOG__ 1
+#ifndef FLOVV_LOG_HPP_INCLUDED
+#define FLOVV_LOG_HPP_INCLUDED 1
 
 namespace flovv {
 
@@ -26,7 +26,10 @@ namespace flovv {
     public:
         
         
-        
+        static void
+        log () {
+            std::cerr << "foo" << std::endl;
+        }
     };
     
 }

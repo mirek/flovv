@@ -1,5 +1,5 @@
 //
-// The MIT License
+// Released under the MIT License.
 //
 // Copyright (c) 2012 - 2013, Mirek Rusin <mirek [at] me [dot] com>
 // http://flovv.org
@@ -25,8 +25,11 @@
 namespace flovv
 {
     
-    /// Pair of a node and an output name.
-    ///
+    /**
+     * Represents Node and Output pair. We're using this pair because Param
+     *
+     * Together with NodeInput can represent a binding.
+     */
     class NodeOutput : public NodeParamNamePair
     {
 
@@ -40,22 +43,32 @@ namespace flovv
         /// @return Node reference for this node/output name pair.
         ///
         Node &
-        node ();
+        getNode () const;
 
         const std::string &
-        outputName () const;
+        getOutputName () const;
         
         /**
          *
          */
         OutputParam &
-        output () const;
+        getOutput () const;
         
         /**
          *
          */
         const std::string &
-        typeName () const;
+        getTypeName () const;
+
+        friend std::ostream &
+        operator<< (std::ostream &o, const NodeOutput &self)
+        {
+            return o << self.getNode().getNodeId();
+//            "typeName=\"" << self.mTypeName << "\" " <<
+//            "stores=" << self.mStores << "\", " <<
+//            "loads=" << self.mLoads << "\", " <<
+//            "lastLoadAtStore=" << self.mLastLoadAtStore << "\" />";
+        }
     };
 }
 
