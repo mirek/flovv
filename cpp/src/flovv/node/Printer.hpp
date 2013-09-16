@@ -36,9 +36,9 @@ namespace flovv { namespace node {
         }
         
         virtual void operator()() {
-            if (hasInputChanged()) {
+//            if (hasInputChanged()) {
                 std::cout << loadInput<type::String>() << std::endl;
-            }
+//            }
         };
         
     };

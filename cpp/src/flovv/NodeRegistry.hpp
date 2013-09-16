@@ -32,13 +32,12 @@
 
 namespace flovv {
 
-    typedef std::shared_ptr<Node> NodePtr;
-    typedef std::function<NodePtr()> NodeFactoryFunction;
-    
+    typedef std::function<Node *(void)> NodeFactoryFunction;
+
     template <typename T>
-    NodePtr
-    createNodeSharedPtr () {
-        return std::make_shared<T>();
+    Node *
+    newNode (void) {
+        return new T();
     }
 
     /**
@@ -56,15 +55,15 @@ namespace flovv {
     public:
         
         NodeRegistry () {
-            registerNodeType("Random", createNodeSharedPtr<node::Random>);
-            registerNodeType("Printer", createNodeSharedPtr<node::Printer>);
-            registerNodeType("Sine", createNodeSharedPtr<node::Sine>);
-            registerNodeType("Math", createNodeSharedPtr<node::Math>);
-//            registerNodeType("FrameSignal", createNodeSharedPtr<node::FrameSignal>);
+            registerNodeType("Random", newNode<node::Random>);
+            registerNodeType("Printer", newNode<node::Printer>);
+            registerNodeType("Sine", newNode<node::Sine>);
+            registerNodeType("Math", newNode<node::Math>);
+//            registerNodeType("FrameSignal", newNode<node::FrameSignal>);
         }
         
         void
-        registerNodeType (const std::string &name, const NodeFactoryFunction &function) {
+        registerNodeType (const std::string &name, NodeFactoryFunction function) {
             mNodeFactoryFunctions[name] = function;
         }
         
@@ -73,7 +72,7 @@ namespace flovv {
             return mNodeFactoryFunctions.find(name) != mNodeFactoryFunctions.cend();
         }
         
-        NodePtr
+        Node *
         createNode (const std::string &name) {
             return mNodeFactoryFunctions.at(name)();
         }

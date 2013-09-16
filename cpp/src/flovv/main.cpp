@@ -72,12 +72,12 @@ main (void) {
 //	flovv::param p;
 
     Engine engine("test.flovv");
-    Node &randomNode = *engine.createNode("Random");
-    Node &printerNode = *engine.createNode("Printer");
-    engine.connect(randomNode, printerNode);
+    Node *randomNode = engine.createNode("Random");
+    Node *printerNode = engine.createNode("Printer");
+    engine.connect(*randomNode, *printerNode);
 
-//    randomNode();
-//    printerNode();
+    (*randomNode)();
+    (*printerNode)();
 //
 //    randomNode();
 //    printerNode();

@@ -21,10 +21,10 @@
 
 namespace flovv
 {
-    NodePtr
+    Node *
     Engine::createNode (const std::string &name)
     {
-        NodePtr result = nullptr;
+        Node *result = nullptr;
         if (mNodeRegistry.nodeTypeRegistered(name)) {
             result = mNodeRegistry.createNode(name);
             if (result) {
@@ -59,12 +59,6 @@ namespace flovv
     type::UInt64
     Engine::getFrame () {
         return mFrame;
-    }
-
-    NodePtr
-    Engine::getNodePtr (const NodeId &nodeId)
-    {
-        return mDocument.getNodePtr(nodeId);
     }
 
     void

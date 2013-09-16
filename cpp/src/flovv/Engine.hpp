@@ -109,7 +109,7 @@ namespace flovv
          *
          * @return NodePtr
          */
-        NodePtr
+        Node *
         createNode (const std::string &name);
 
         /**
@@ -123,7 +123,7 @@ namespace flovv
         /**
          *
          */
-        NodePtr
+        Node *
         getNodePtr (const NodeId &nodeId);
 
         void

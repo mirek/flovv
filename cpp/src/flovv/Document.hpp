@@ -40,7 +40,7 @@ namespace flovv
         /**
          * Mapping from node identifiers to node objects.
          */
-        std::map<std::string, NodePtr> mNodes;
+        std::map<std::string, Node *> mNodes;
         
     protected:
         
@@ -70,7 +70,7 @@ namespace flovv
         /// @return Node identifier or NodeIdNone on failure.
         ///
         NodeId
-        addNode (const NodePtr &node)
+        addNode (Node *node)
         {
             NodeId result = NodeIdNone;
             if (node) {
@@ -95,20 +95,8 @@ namespace flovv
          * @param nodeId Node 
          * @return Node reference
          */
-        Node &
+        Node *
         getNode (const NodeId &nodeId)
-        {
-            return *mNodes.at(nodeId);
-        }
-        
-        /**
-         * Get node pointer by node id.
-         *
-         * @param nodeId Node
-         * @return Node reference
-         */
-        NodePtr
-        getNodePtr (const NodeId &nodeId)
         {
             return mNodes.at(nodeId);
         }

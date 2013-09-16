@@ -32,8 +32,8 @@ namespace flovv
         setTimeMode(timeMode);
     }
     
-    Node::~Node ()
-    {
+    Node::~Node (void) {
+        std::cout << "Deleting" << std::endl;
     }
     
     void
@@ -88,7 +88,7 @@ namespace flovv
     }
     
     void
-    Node::registerOutput (const std::string &name, const std::string &typeName, const type::Any &initialValue)
+    Node::registerOutput (std::string name, const std::string &typeName, const type::Any &initialValue)
     {
         // mOutputParams.insert(name, { typeName, initialValue });
         mOutputParams[name] = { typeName, initialValue };
@@ -107,7 +107,7 @@ namespace flovv
     }
     
     void
-    Node::registerInput (const std::string &name, const std::string &typeName, const type::Any &value) {
+    Node::registerInput (std::string name, const std::string &typeName, const type::Any &value) {
         mInputParams[name] = { typeName, value };
     }
 

@@ -99,7 +99,7 @@ namespace flovv
          *
          */
         virtual
-        ~Node();
+        ~Node (void);
         
         /**
          * Perform 
@@ -180,14 +180,14 @@ namespace flovv
          *
          */
         void
-        registerInput (const std::string &name, const std::string &typeName, const type::Any &initialValue);
+        registerInput (std::string name, const std::string &typeName, const type::Any &initialValue);
         
         /**
          *
          */
         template <typename T>
         void
-        registerInput (const std::string &name, const std::string &typeName, const T &initialValue)
+        registerInput (std::string name, const std::string &typeName, const T &initialValue)
         {
             registerInput(name, typeName, (const type::Any &) initialValue);
         }
@@ -196,14 +196,14 @@ namespace flovv
          *
          */
         void
-        registerOutput (const std::string &name, const std::string &typeName, const type::Any &initialValue);
+        registerOutput (std::string name, const std::string &typeName, const type::Any &initialValue);
 
         /**
          *
          */
         template <typename T>
         void
-        registerOutput (const std::string &name, const std::string &typeName, const T &initialValue)
+        registerOutput (std::string name, const std::string &typeName, const T &initialValue)
         {
             registerOutput(name, typeName, (const type::Any &) initialValue);
         }
