@@ -5,7 +5,7 @@ namespace flovv { namespace node
 {
     FrameSignal::FrameSignal () : Node(ExecutionMode::Producer, TimeMode::Linear)
     {
-        registerOutput<type::UInt64>("Output", "UInt64", mOutput = 0);
+        registerOutput<UInt64>("Output", mOutput = 0);
     }
 
     void

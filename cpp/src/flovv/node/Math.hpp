@@ -30,9 +30,12 @@
 //#include <flovv/type/Enum.hpp>
 
 namespace flovv { namespace node {
-    
+
+    using namespace type;
+
     class Math : public Node {
-        
+
+
     public:
 
 //    	static const type::String InputEnabled = "Enabled";
@@ -50,17 +53,18 @@ namespace flovv { namespace node {
         };
 
         Math() : Node(ExecutionMode::Processor, TimeMode::None) {
-            registerInput  ("Enabled",   "Boolean",  type::Boolean(true));
-            registerInput  ("Operation", "UInt8",    type::UInt8(OperationTypeAddition));
-//            registerInput  ("Operand1",  "Numeric",  type::Numeric(0));
-//            registerInput  ("Operand2",  "Numeric",  type::Numeric(0));
-//            registerOutput ("Output",    "Numeric",  type::Numeric(0));
+            registerInput<Boolean>("Enabled", true);
+            registerInput<UInt8>("Operation", OperationTypeAddition);
+            registerInput<Numeric>("A", 0);
+            registerInput<Numeric>("B", 0);
+            registerOutput<Numeric>("Output", 0);
         }
         
-        virtual void operator()() {
-//            if (anyInputChanged("Operand1", "Operand2")) {
-//                type::Numeric a = loadInput<type::Numeric>("a");
-//                type::Numeric b = loadInput<type::Numeric>("b");
+        virtual void
+        operator() () {
+            if (haveAnyInputChanged({"A", "B"})) {
+                Numeric a = loadInput<Numeric>("A");
+                Numeric b = loadInput<Numeric>("B");
 //                type::Numeric output = NumericTypeNull;
 //                switch (loadInput<UInt8>("Operation")) {
 //                    case OperationTypeAddition:       output = a + b; break;
@@ -73,7 +77,7 @@ namespace flovv { namespace node {
 //                    case OperationTypeMaximum:        output = Numeric::max(a, b); break;
 //                }
 //                storeOutput<type::Numeric>(output);
-//            }
+            }
         };
     };
     

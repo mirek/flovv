@@ -30,7 +30,7 @@
 
 namespace flovv {
 
-    typedef std::function<bool(const boost::any &, boost::any &)> TypeConvertionFunction;
+    typedef bool (*TypeConvertionFunction) (const type::Any &, type::Any &);
     typedef std::pair<std::string, std::string> TypeConvertionKey;
 
     template <typename T1, typename T2>

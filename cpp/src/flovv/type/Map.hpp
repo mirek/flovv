@@ -24,7 +24,7 @@
 #include <flovv/type/String.hpp>
 
 namespace flovv { namespace type {
-    
+
     class Map : public std::map<String, Any> {
     public:
     };

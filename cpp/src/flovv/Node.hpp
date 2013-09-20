@@ -187,9 +187,9 @@ namespace flovv
          */
         template <typename T>
         void
-        registerInput (std::string name, const std::string &typeName, const T &initialValue)
+        registerInput (std::string name, const T &initialValue)
         {
-            registerInput(name, typeName, (const type::Any &) initialValue);
+            registerInput(name, type::typeName<T>(), (const type::Any &) initialValue);
         }
 
         /**
@@ -203,9 +203,9 @@ namespace flovv
          */
         template <typename T>
         void
-        registerOutput (std::string name, const std::string &typeName, const T &initialValue)
+        registerOutput (std::string name, const T &initialValue)
         {
-            registerOutput(name, typeName, (const type::Any &) initialValue);
+        registerOutput(name, type::typeName<T>(), (const type::Any &) initialValue);
         }
         
         /**

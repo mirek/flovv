@@ -17,10 +17,25 @@
 // OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 //
 
+#ifndef __FLOVV_ANY_HPP__
+#define __FLOVV_ANY_HPP__ 1
+
 #include <boost/any.hpp>
 
 namespace flovv { namespace type {
 
     typedef boost::any Any;
 
+//    class Any : public boost::any {
+//    public:
+//
+//        template <typename T>
+//        T
+//        cast () const {
+//            return std::move(boost::any_cast<T>(this));
+//        }
+//    };
+
 } }
+
+#endif

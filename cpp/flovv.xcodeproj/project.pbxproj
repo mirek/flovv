@@ -162,8 +162,8 @@
 				EBD73BED17552D2B0043F605 /* ThreadPoolWorker.cpp */,
 				EBD73BEE17552D2B0043F605 /* ThreadPoolWorker.hpp */,
 				EBD73BF917552D2B0043F605 /* type.hpp */,
-				EBD73BFA17552D2B0043F605 /* TypeRegistry.cpp */,
 				EBD73BFB17552D2B0043F605 /* TypeRegistry.hpp */,
+				EBD73BFA17552D2B0043F605 /* TypeRegistry.cpp */,
 			);
 			path = flovv;
 			sourceTree = "<group>";
@@ -183,8 +183,8 @@
 				EBD73BCC17552D2B0043F605 /* Circle.hpp */,
 				EBD73BCD17552D2B0043F605 /* FrameSignal.cpp */,
 				EBD73BCE17552D2B0043F605 /* FrameSignal.hpp */,
-				EBD73BCF17552D2B0043F605 /* Math.cpp */,
 				EBD73BD017552D2B0043F605 /* Math.hpp */,
+				EBD73BCF17552D2B0043F605 /* Math.cpp */,
 				EBD73BD317552D2B0043F605 /* Printer.hpp */,
 				EBD73BD417552D2B0043F605 /* Random.hpp */,
 				EBD73BD517552D2B0043F605 /* RGBColor.cpp */,
@@ -209,8 +209,8 @@
 				EBD73BF117552D2B0043F605 /* Any.hpp */,
 				EBD73BF217552D2B0043F605 /* Color.hpp */,
 				EBD73BF317552D2B0043F605 /* Map.hpp */,
-				EBD73BF417552D2B0043F605 /* Numeric.cpp */,
 				EBD73BF517552D2B0043F605 /* Numeric.hpp */,
+				EBD73BF417552D2B0043F605 /* Numeric.cpp */,
 				EBD73BF617552D2B0043F605 /* Signal.hpp */,
 				EBD73BF717552D2B0043F605 /* String.hpp */,
 				EBD73BF817552D2B0043F605 /* VectorInt32.hpp */,

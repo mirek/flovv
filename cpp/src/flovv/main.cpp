@@ -65,6 +65,7 @@ using namespace flovv;
 //};
 
 #include <flovv/Log.hpp>
+#include <flovv/type/Numeric.hpp>
 
 int
 main (void) {
@@ -75,9 +76,22 @@ main (void) {
     Node *randomNode = engine.createNode("Random");
     Node *printerNode = engine.createNode("Printer");
     engine.connect(*randomNode, *printerNode);
-
     (*randomNode)();
     (*printerNode)();
+
+    flovv::type::Numeric n1;
+    flovv::type::Numeric n2;
+
+    n1 = 1;
+    n2 = 0.5;
+
+    flovv::type::Numeric n3 = n1 + n2;
+
+//    n3 = flovv::type::Numeric::add(n1, n2);
+
+    std::cout << n3 << std::endl;
+
+
 //
 //    randomNode();
 //    printerNode();
